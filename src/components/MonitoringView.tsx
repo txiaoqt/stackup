@@ -57,7 +57,7 @@ export default function MonitoringView({
               onClick={() => setSelectedTab(tab.name)}
               className={`px-4 py-2 rounded-lg transition-all text-xs font-bold leading-none cursor-pointer ${
                 selectedTab === tab.name
-                  ? "bg-slate-800 text-white border border-[#38BDF8]/20 shadow-sm"
+                  ? "bg-slate-800 text-white border border-[#4F6EF7]/20 shadow-sm"
                   : "text-slate-400 hover:text-slate-100"
               }`}
             >
@@ -69,7 +69,7 @@ export default function MonitoringView({
       </div>
 
       {/* Degradation State Banner */}
-      <div className="bg-[#1E293B] border border-rose-500/25 p-5.5 rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#1630A8] border border-rose-500/25 p-5.5 rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h3 className="text-sm font-bold text-white flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse inline-block" />
@@ -82,7 +82,7 @@ export default function MonitoringView({
 
         <button 
           onClick={() => setScreen("AI_ASSISTANT")}
-          className="px-4 py-2 text-xs font-bold bg-[#38BDF8] text-slate-950 rounded-lg hover:bg-sky-400 font-sans transition-all active:scale-95 cursor-pointer flex items-center gap-1.5"
+          className="px-4 py-2 text-xs font-bold bg-[#4F6EF7] text-slate-950 rounded-lg hover:bg-indigo-400 font-sans transition-all active:scale-95 cursor-pointer flex items-center gap-1.5"
         >
           <Cpu size={12} className="animate-spin" />
           <span>Consult AI Recommendation</span>
@@ -92,11 +92,11 @@ export default function MonitoringView({
       {/* Metrics Simulated Visual Plot Blocks */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { name: "CPU / Memory Usage (%)", val: "78.2%", color: "text-blue-400", path: "M5,42 Q30,12 60,35 T120,8 T180,24 T240,15 T300,10" },
+          { name: "CPU / Memory Usage (%)", val: "78.2%", color: "text-indigo-400", path: "M5,42 Q30,12 60,35 T120,8 T180,24 T240,15 T300,10" },
           { name: "Request Rate (RPS)", val: "1.4k /s", color: "text-emerald-400", path: "M5,45 Q40,30 80,11 T140,43 T200,10 T260,32 T300,5" },
           { name: "Error Rate (%)", val: "8.4% Max", color: "text-rose-400", path: "M5,10 Q35,42 70,22 T120,41 T180,30 T240,45 T300,5" }
         ].map((chart) => (
-          <div key={chart.name} className="bg-[#1E293B] p-5 rounded-xl border border-slate-800 shadow-sm flex flex-col justify-between">
+          <div key={chart.name} className="bg-[#1630A8] p-5 rounded-xl border border-slate-800 shadow-sm flex flex-col justify-between">
             <div className="flex justify-between items-baseline mb-4">
               <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">{chart.name}</span>
               <span className={`text-base font-mono font-bold ${chart.color}`}>{chart.val}</span>
@@ -121,7 +121,7 @@ export default function MonitoringView({
       {/* Grid: Alerts & Logs Feed */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Active Alerts Section */}
-        <div className="lg:col-span-12 bg-[#1E293B] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
+        <div className="lg:col-span-12 bg-[#1630A8] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
           <div className="px-6 py-4.5 border-b border-slate-800/80 flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <AlertTriangle size={15} className="text-rose-400" />
@@ -150,19 +150,19 @@ export default function MonitoringView({
                     onClick={() => setSelectedAlert(al)}
                     className="hover:bg-slate-800/30 cursor-pointer transition-all group"
                   >
-                    <td className="px-6 py-3.5 font-bold text-slate-200 group-hover:text-[#38BDF8]">{al.name}</td>
+                    <td className="px-6 py-3.5 font-bold text-slate-200 group-hover:text-[#4F6EF7]">{al.name}</td>
                     <td className="px-6 py-3.5">
                       <span className={`px-2 py-0.5 text-[9px] font-extrabold rounded uppercase tracking-wider border ${
                         al.severity === "Critical" ? "bg-rose-500/10 text-rose-400 border-rose-500/20" :
                         al.severity === "High" ? "bg-amber-500/10 text-amber-400 border-amber-500/20" :
-                        "bg-blue-500/10 text-blue-400 border-blue-500/20"
+                        "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
                       }`}>
                         {al.severity}
                       </span>
                     </td>
                     <td className="px-6 py-3.5 text-slate-400 font-mono">{al.triggeredTime}</td>
                     <td className="px-6 py-3.5 text-slate-300 font-mono">{al.linkedService}</td>
-                    <td className="px-6 py-3.5 text-right font-semibold text-[#38BDF8] text-[10px] uppercase font-sans">
+                    <td className="px-6 py-3.5 text-right font-semibold text-[#4F6EF7] text-[10px] uppercase font-sans">
                       Inspect Alert &gt;
                     </td>
                   </tr>
@@ -174,10 +174,10 @@ export default function MonitoringView({
       </div>
 
       {/* Streaming live logs feed */}
-      <div className="bg-[#1E293B] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
+      <div className="bg-[#1630A8] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
         <div className="px-6 py-4 border-b border-slate-800 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <History size={14} className="text-[#38BDF8]" />
+            <History size={14} className="text-[#4F6EF7]" />
             <h3 className="text-sm font-bold text-white">System Metrics &amp; Host Logs</h3>
           </div>
           <span className="text-[10px] text-slate-400 font-mono">Live Ingress Stream</span>
@@ -188,7 +188,7 @@ export default function MonitoringView({
             <div key={index} className="flex items-start space-x-2 leading-relaxed">
               <span className="text-slate-500 font-medium select-none">[{log.timestamp}]</span>
               <span className={`text-[9px] font-bold uppercase ${
-                log.level === "ERROR" ? "text-rose-400" : log.level === "WARN" ? "text-amber-400" : "text-blue-400"
+                log.level === "ERROR" ? "text-rose-400" : log.level === "WARN" ? "text-amber-400" : "text-indigo-400"
               }`}>
                 [{log.level}]
               </span>
@@ -200,7 +200,7 @@ export default function MonitoringView({
 
       {/* Alert Detail Drawer Context right-side overlays */}
       {selectedAlert && (
-        <div className="fixed inset-y-0 right-0 w-full sm:w-[420px] bg-[#111827] border-l border-slate-800/80 z-50 overflow-y-auto shadow-2xl p-6 flex flex-col justify-between select-none">
+        <div className="fixed inset-y-0 right-0 w-full sm:w-[420px] bg-[#1A2260] border-l border-slate-800/80 z-50 overflow-y-auto shadow-2xl p-6 flex flex-col justify-between select-none">
           <div>
             <div className="flex items-center justify-between border-b border-slate-800 pb-4.5 mb-6">
               <h3 className="text-sm font-bold text-white uppercase font-mono">Alarm Spec Viewer</h3>
@@ -267,7 +267,7 @@ export default function MonitoringView({
                 setSelectedAlert(null);
                 setScreen("AI_ASSISTANT");
               }}
-              className="px-4.5 py-2.5 text-xs font-bold bg-[#38BDF8] text-slate-950 hover:bg-sky-400 rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 grow"
+              className="px-4.5 py-2.5 text-xs font-bold bg-[#4F6EF7] text-slate-950 hover:bg-indigo-400 rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 grow"
             >
               <span>Consult AI Recommender</span>
               <ArrowRight size={12} />
@@ -278,3 +278,4 @@ export default function MonitoringView({
     </div>
   );
 }
+

@@ -40,7 +40,6 @@ export interface DeploymentLog {
   level: "INFO" | "WARN" | "ERROR";
   message: string;
 }
-
 export interface ActionItem {
   id: string;
   task: string;
@@ -109,3 +108,4 @@ export interface TeamMemberPresence {
   status: "Online" | "Away" | "Offline";
   avatar: string;
 }
+

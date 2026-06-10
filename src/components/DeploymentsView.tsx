@@ -56,7 +56,7 @@ export default function DeploymentsView({
           </button>
           <div>
             <h2 className="text-base font-bold text-white flex items-center gap-1.5 font-sans">
-              Deployment Inspector: <span className="font-mono text-[#38BDF8]">{currentDeployment.name}</span>
+              Deployment Inspector: <span className="font-mono text-[#4F6EF7]">{currentDeployment.name}</span>
             </h2>
             <p className="text-xs text-slate-500 font-mono">ID: {currentDeployment.id} · Commit: {currentDeployment.commitHash}</p>
           </div>
@@ -65,13 +65,13 @@ export default function DeploymentsView({
       </div>
 
       {/* Main Release Block Header */}
-      <div className="bg-[#1E293B] p-6 rounded-xl border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#1630A8] p-6 rounded-xl border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1.5">
           <div className="flex items-center gap-2.5">
             <span className="text-lg font-bold text-white font-mono">{currentDeployment.name} {currentDeployment.version}</span>
             <span className={`px-2.5 py-0.5 text-[10px] font-bold rounded-full border uppercase tracking-wide flex items-center gap-1 ${
               currentDeployment.status === "Success" ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" :
-              currentDeployment.status === "Pending" ? "bg-amber-500/10 text-amber-400 border-[#38BDF8]/20 animate-pulse" :
+              currentDeployment.status === "Pending" ? "bg-amber-500/10 text-amber-400 border-[#4F6EF7]/20 animate-pulse" :
               "bg-rose-500/10 text-rose-400 border-rose-500/20 shadow-md shadow-rose-950/20"
             }`}>
               {currentDeployment.status === "Success" ? <CheckCircle size={10} /> :
@@ -101,7 +101,7 @@ export default function DeploymentsView({
               key={item.env}
               className={`px-3 py-1 text-xs rounded-lg font-semibold tracking-wide uppercase border transition-all ${
                 item.active 
-                  ? "bg-slate-800 text-[#38BDF8] border-[#38BDF8]/30 font-bold shadow-sm shadow-blue-500/5"
+                  ? "bg-slate-800 text-[#4F6EF7] border-[#4F6EF7]/30 font-bold shadow-sm shadow-indigo-500/5"
                   : "bg-slate-900/40 text-slate-500 border-slate-800/80"
               }`}
             >
@@ -114,10 +114,10 @@ export default function DeploymentsView({
       {/* Grid containing services list and rollback controller */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Affected Services & Timeline list */}
-        <div className="lg:col-span-6 bg-[#1E293B] p-6 rounded-xl border border-slate-800 shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-6 bg-[#1630A8] p-6 rounded-xl border border-slate-800 shadow-sm flex flex-col justify-between">
           <div>
             <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-1.5 border-b border-slate-800 pb-2.5">
-              <Layers size={14} className="text-blue-400" />
+              <Layers size={14} className="text-indigo-400" />
               <span>Affected System Services</span>
             </h3>
             <div className="grid grid-cols-2 gap-3 mb-6">
@@ -155,7 +155,7 @@ export default function DeploymentsView({
               className={`px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-1.5 shadow-md transition-all active:scale-95 cursor-pointer ${
                 currentDeployment.status === "Success"
                   ? "bg-slate-800 text-slate-500 border border-slate-700/30 cursor-not-allowed opacity-60"
-                  : "bg-[#38BDF8] text-slate-950 hover:bg-sky-400"
+                  : "bg-[#4F6EF7] text-slate-950 hover:bg-indigo-400"
               }`}
             >
               <RotateCcw size={12} className={currentDeployment.status !== "Success" ? "animate-pulse" : ""} />
@@ -165,9 +165,9 @@ export default function DeploymentsView({
         </div>
 
         {/* Timeline history & Candidate releases */}
-        <div className="lg:col-span-6 bg-[#1E293B] p-6 rounded-xl border border-slate-800 shadow-sm">
+        <div className="lg:col-span-6 bg-[#1630A8] p-6 rounded-xl border border-slate-800 shadow-sm">
           <h3 className="text-sm font-bold text-white mb-4.5 flex items-center gap-1.5 border-b border-slate-800 pb-2.5">
-            <RotateCcw size={14} className="text-[#38BDF8]" />
+            <RotateCcw size={14} className="text-[#4F6EF7]" />
             <span>Rollback History Timeline</span>
           </h3>
 
@@ -189,7 +189,7 @@ export default function DeploymentsView({
                 {rh.enabled ? (
                   <button
                     onClick={() => handleRollbackClick(rh.version)}
-                    className="text-[10px] uppercase font-bold text-[#38BDF8] hover:bg-[#38BDF8]/10 px-2.5 py-1 rounded-md border border-[#38BDF8]/20 transition-all cursor-pointer font-mono"
+                    className="text-[10px] uppercase font-bold text-[#4F6EF7] hover:bg-[#4F6EF7]/10 px-2.5 py-1 rounded-md border border-[#4F6EF7]/20 transition-all cursor-pointer font-mono"
                   >
                     Select Rollback
                   </button>
@@ -205,10 +205,10 @@ export default function DeploymentsView({
       </div>
 
       {/* Embedded Live Log Viewer Output */}
-      <div className="bg-[#1E293B] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
+      <div className="bg-[#1630A8] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
         <div className="px-6 py-4 border-b border-slate-800 flex justify-between items-center">
           <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
-            <FileCode size={14} className="text-[#38BDF8]" />
+            <FileCode size={14} className="text-[#4F6EF7]" />
             <span>Deployment Logs Preview Console</span>
           </h3>
           <span className="text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 font-bold uppercase px-2 py-0.5 rounded animate-pulse">
@@ -223,7 +223,7 @@ export default function DeploymentsView({
               <span className={`px-1.5 py-0.1 rounded text-[9px] font-bold shrink-0 uppercase tracking-widest ${
                 log.level === "ERROR" ? "bg-rose-500/10 text-rose-400 border border-rose-500/20" :
                 log.level === "WARN" ? "bg-amber-500/10 text-amber-400 border border-amber-500/20" :
-                "bg-blue-500/10 text-blue-400 border border-blue-500/20"
+                "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
               }`}>
                 {log.level}
               </span>
@@ -238,9 +238,9 @@ export default function DeploymentsView({
       {/* Confirmation Rollback Modal Overlay */}
       {showConfirmModal && (
         <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-xs select-none">
-          <div className="bg-[#1E293B] border border-slate-800/80 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl p-6 space-y-4">
+          <div className="bg-[#1630A8] border border-slate-800/80 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl p-6 space-y-4">
             <div className="flex items-center space-x-3 border-b border-slate-800 pb-3">
-              <div className="p-1 rounded bg-[#38BDF8]/10 text-[#38BDF8]">
+              <div className="p-1 rounded bg-[#4F6EF7]/10 text-[#4F6EF7]">
                 <RotateCcw size={18} className="animate-spin" />
               </div>
               <h3 className="text-base font-bold text-white font-sans">Confirm Emergency Rollback</h3>
@@ -260,7 +260,7 @@ export default function DeploymentsView({
               <button
                 onClick={handleConfirmRollback}
                 id="modal-confirm-rollback-btn"
-                className="px-4.5 py-2 bg-[#38BDF8] text-slate-950 font-extrabold text-xs rounded-lg hover:bg-sky-400 transition-all shadow-md shadow-sky-400/10 cursor-pointer"
+                className="px-4.5 py-2 bg-[#4F6EF7] text-slate-950 font-extrabold text-xs rounded-lg hover:bg-indigo-400 transition-all shadow-md shadow-indigo-400/10 cursor-pointer"
               >
                 Confirm &amp; Proceed Rollback
               </button>
@@ -271,3 +271,4 @@ export default function DeploymentsView({
     </div>
   );
 }
+

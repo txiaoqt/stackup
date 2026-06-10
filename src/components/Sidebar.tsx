@@ -11,6 +11,7 @@ import {
   ShieldAlert, 
   LogOut 
 } from "lucide-react";
+import stackupLogo from "../../assets/stackup-logo.png";
 
 interface SidebarProps {
   currentScreen: AppScreen;
@@ -68,20 +69,19 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
   };
 
   return (
-    <aside className="w-64 bg-[#111827] border-r border-slate-800 flex flex-col h-full select-none shrink-0" id="app-sidebar">
+    <aside className="w-64 bg-[#1A2260] border-r border-slate-800 flex flex-col h-full select-none shrink-0" id="app-sidebar">
       {/* Brand logo header */}
       <div className="p-6 pb-4 flex items-center space-x-3 border-b border-slate-800/60">
-        <div 
+        <button
           onClick={() => setScreen("DASHBOARD")}
-          className="w-8 h-8 bg-[#38BDF8] rounded flex flex-col items-center justify-center space-y-0.5 shadow-md shadow-blue-500/10 cursor-pointer hover:opacity-90 active:scale-95 transition-all"
+          className="w-9 h-9 bg-[#E8ECFE] rounded-lg flex items-center justify-center shadow-md shadow-indigo-500/10 cursor-pointer hover:opacity-90 active:scale-95 transition-all border border-[#4F6EF7]/35"
+          aria-label="Go to dashboard"
         >
-          <div className="w-5 h-1 bg-white rounded-full opacity-40"></div>
-          <div className="w-5 h-1 bg-white rounded-full"></div>
-          <div className="w-5 h-1 bg-white rounded-full opacity-40"></div>
-        </div>
+          <img src={stackupLogo} alt="" className="w-7 h-7 object-contain" />
+        </button>
         <div className="flex flex-col cursor-pointer" onClick={() => setScreen("DASHBOARD")}>
           <span className="text-lg font-bold text-white tracking-tight flex items-center gap-0.5">
-            Stack<span className="text-[#38BDF8]">Up</span>
+            Stack<span className="text-[#4F6EF7]">Up</span>
           </span>
           <span className="text-[10px] text-slate-500 font-mono tracking-wider -mt-1 font-semibold uppercase">Control Pane</span>
         </div>
@@ -102,17 +102,17 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
                       onClick={() => handleNavClick(item.screen)}
                       className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer group ${
                         active 
-                          ? "bg-slate-800 text-white border-l-2 border-[#38BDF8] pl-2.5 shadow-sm"
+                          ? "bg-slate-800 text-white border-l-2 border-[#4F6EF7] pl-2.5 shadow-sm"
                           : "text-slate-400 hover:bg-slate-800/50 hover:text-white"
                       }`}
                     >
                       <div className="flex items-center space-x-3">
-                        <Icon size={16} className={active ? "text-[#38BDF8]" : "text-slate-500 group-hover:text-slate-300 transition-colors"} />
+                        <Icon size={16} className={active ? "text-[#4F6EF7]" : "text-slate-500 group-hover:text-slate-300 transition-colors"} />
                         <span>{item.label}</span>
                       </div>
                       
                       {item.id === "AI_ASSISTANT" && (
-                        <span className="text-[9px] px-1.5 py-0.2 bg-[#38BDF8]/10 text-[#38BDF8] rounded font-semibold animate-pulse border border-[#38BDF8]/20">
+                        <span className="text-[9px] px-1.5 py-0.2 bg-[#4F6EF7]/10 text-[#4F6EF7] rounded font-semibold animate-pulse border border-[#4F6EF7]/20">
                           Active
                         </span>
                       )}
@@ -129,7 +129,7 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
       <div className="p-4 border-t border-slate-800/80 bg-slate-950/25 flex flex-col space-y-3">
         <div className="flex items-center space-x-3 justify-between">
           <div className="flex items-center space-x-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-500 flex items-center justify-center text-xs font-bold text-white shadow-md border border-blue-500/30">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-600 to-indigo-500 flex items-center justify-center text-xs font-bold text-white shadow-md border border-indigo-500/30">
               {user.avatarUrl ? (
                 <img src={user.avatarUrl} alt={user.fullName} className="w-full h-full rounded-full object-cover" />
               ) : (
@@ -159,3 +159,4 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
     </aside>
   );
 }
+

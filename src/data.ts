@@ -132,7 +132,6 @@ export const initialIncidents: Incident[] = [
     resolution: ""
   }
 ];
-
 export const initialAlerts: Alert[] = [
   {
     id: "al-1",
@@ -202,3 +201,4 @@ export const initialTeamPresence: TeamMemberPresence[] = [
   { name: "Tadz", status: "Online", avatar: "TS" },
   { name: "Nics", status: "Offline", avatar: "NC" }
 ];
+

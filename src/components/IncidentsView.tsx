@@ -57,7 +57,7 @@ export default function IncidentsView({
         <div className="flex items-center space-x-3">
           <button 
             onClick={() => setScreen("DASHBOARD")}
-            className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-[#0F172A] cursor-pointer"
+            className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-[#1A2260] cursor-pointer"
           >
             <ArrowLeft size={14} />
           </button>
@@ -75,7 +75,7 @@ export default function IncidentsView({
       </div>
 
       {/* Details Box: Status dropdown, assigned owner, collaborators */}
-      <div className="bg-[#1E293B] p-5 rounded-xl border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="bg-[#1630A8] p-5 rounded-xl border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Status state change */}
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">Incident Status State</label>
@@ -84,7 +84,7 @@ export default function IncidentsView({
               value={currentIncident.status}
               onChange={(e) => onUpdateStatus(currentIncident.id, e.target.value as Incident["status"])}
               id="incident-status-selector"
-              className="w-full text-xs font-semibold bg-slate-900 border border-slate-800 px-3.5 py-2.5 rounded-xl text-slate-200 outline-none hover:border-slate-700 focus:border-[#38BDF8] cursor-pointer"
+              className="w-full text-xs font-semibold bg-slate-900 border border-slate-800 px-3.5 py-2.5 rounded-xl text-slate-200 outline-none hover:border-slate-700 focus:border-[#4F6EF7] cursor-pointer"
             >
               <option value="Investigating">Investigating</option>
               <option value="Identified">Identified</option>
@@ -102,7 +102,7 @@ export default function IncidentsView({
               value={currentIncident.assignedOwner}
               onChange={(e) => onUpdateOwner(currentIncident.id, e.target.value)}
               id="incident-owner-selector"
-              className="w-full text-xs font-semibold bg-slate-900 border border-slate-800 px-3.5 py-2.5 rounded-xl text-slate-200 outline-none hover:border-slate-700 focus:border-[#38BDF8] cursor-pointer"
+              className="w-full text-xs font-semibold bg-slate-900 border border-slate-800 px-3.5 py-2.5 rounded-xl text-slate-200 outline-none hover:border-slate-700 focus:border-[#4F6EF7] cursor-pointer"
             >
               <option value="Dani">Dani M.</option>
               <option value="Nami">Nami D.</option>
@@ -136,9 +136,9 @@ export default function IncidentsView({
       {/* Notes checklist and timeline layout columns */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left column: Event timeline logs */}
-        <div className="lg:col-span-7 bg-[#1E293B] p-6 rounded-xl border border-slate-800 shadow-sm space-y-5">
+        <div className="lg:col-span-7 bg-[#1630A8] p-6 rounded-xl border border-slate-800 shadow-sm space-y-5">
           <h3 className="text-sm font-bold text-white mb-4.5 flex items-center gap-1.5 border-b border-slate-800 pb-2.5">
-            <Clock size={14} className="text-[#38BDF8]" />
+            <Clock size={14} className="text-[#4F6EF7]" />
             <span>Incident Response Chronological Log</span>
           </h3>
 
@@ -146,7 +146,7 @@ export default function IncidentsView({
             {currentIncident.timeline.map((evt, index) => (
               <div key={index} className="relative">
                 {/* timeline point dot */}
-                <div className="absolute -left-[20px] top-1.5 w-2 h-2 rounded-full bg-slate-700 border border-slate-[#111827] z-10" />
+                <div className="absolute -left-[20px] top-1.5 w-2 h-2 rounded-full bg-slate-700 border border-slate-[#1A2260] z-10" />
                 <span className="text-slate-550 mr-2.5 font-bold font-mono">{evt.time}</span>
                 <span className="text-slate-300 font-sans">{evt.event}</span>
               </div>
@@ -162,14 +162,14 @@ export default function IncidentsView({
                   onChange={(e) => setNewNoteText(e.target.value)}
                   placeholder="Record an incident notebook detail or diagnostic outcome note..."
                   id="incident-update-input"
-                  className="w-full text-xs bg-slate-900 border border-slate-800 p-3 rounded-lg text-slate-200 placeholder-slate-500 outline-none hover:border-slate-700 focus:border-[#38BDF8] resize-none min-h-[70px]"
+                  className="w-full text-xs bg-slate-900 border border-slate-800 p-3 rounded-lg text-slate-200 placeholder-slate-500 outline-none hover:border-slate-700 focus:border-[#4F6EF7] resize-none min-h-[70px]"
                 />
               </div>
               <div className="flex justify-end">
                 <button
                   type="submit"
                   id="incident-post-btn"
-                  className="px-4.5 py-2 text-xs font-bold bg-[#38BDF8] hover:bg-sky-400 text-slate-950 rounded-lg transition-all active:scale-95 cursor-pointer flex items-center gap-1.5"
+                  className="px-4.5 py-2 text-xs font-bold bg-[#4F6EF7] hover:bg-indigo-400 text-slate-950 rounded-lg transition-all active:scale-95 cursor-pointer flex items-center gap-1.5"
                 >
                   <Send size={11} />
                   <span>Post Notebook Update</span>
@@ -180,10 +180,10 @@ export default function IncidentsView({
         </div>
 
         {/* Right column: Action checklist items */}
-        <div className="lg:col-span-5 bg-[#1E293B] p-6 rounded-xl border border-slate-800 shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-[#1630A8] p-6 rounded-xl border border-slate-800 shadow-sm flex flex-col justify-between">
           <div>
             <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-1.5 border-b border-slate-800 pb-2.5">
-              <ClipboardList size={14} className="text-blue-400" />
+              <ClipboardList size={14} className="text-indigo-400" />
               <span>Remediation Action Checklist</span>
             </h3>
 
@@ -199,7 +199,7 @@ export default function IncidentsView({
                       type="checkbox"
                       checked={item.checked}
                       onChange={() => {}} // handled by div click
-                      className="accent-[#38BDF8] w-4 h-4 rounded border-slate-800 cursor-pointer text-[#38BDF8]"
+                      className="accent-[#4F6EF7] w-4 h-4 rounded border-slate-800 cursor-pointer text-[#4F6EF7]"
                     />
                     <span className={`text-xs text-slate-200 transition-all font-medium ${item.checked ? "line-through text-slate-500" : ""}`}>
                       {item.task}
@@ -221,7 +221,7 @@ export default function IncidentsView({
       </div>
 
       {/* Post-Incident summary block */}
-      <div className="bg-[#1E293B] rounded-xl border border-slate-800 shadow-sm p-6 relative overflow-hidden">
+      <div className="bg-[#1630A8] rounded-xl border border-slate-800 shadow-sm p-6 relative overflow-hidden">
         {!isResolved && (
           <div className="absolute inset-0 z-10 bg-slate-950/80 backdrop-blur-xs flex flex-col items-center justify-center p-6 text-center select-none">
             <Lock size={20} className="text-slate-500 mb-2" />
@@ -249,7 +249,7 @@ export default function IncidentsView({
               onChange={(e) => setRootCause(e.target.value)}
               placeholder="API gateway timeout mismatches during high-load concurrency queues..."
               id="incident-root-cause"
-              className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none hover:border-slate-700 focus:border-[#38BDF8]"
+              className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none hover:border-slate-700 focus:border-[#4F6EF7]"
             />
           </div>
 
@@ -261,7 +261,7 @@ export default function IncidentsView({
               onChange={(e) => setResolutionText(e.target.value)}
               placeholder="Rolled back deployment to active state v2.4.0 restoring normal checks."
               id="incident-remediation-taken"
-              className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none hover:border-slate-700 focus:border-[#38BDF8]"
+              className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none hover:border-slate-700 focus:border-[#4F6EF7]"
             />
           </div>
         </div>
@@ -269,3 +269,4 @@ export default function IncidentsView({
     </div>
   );
 }
+

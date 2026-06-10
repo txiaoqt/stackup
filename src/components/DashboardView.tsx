@@ -47,10 +47,10 @@ export default function DashboardView({
       {/* Stat Cards Grid Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* Card 1: Deployments */}
-        <div className="bg-[#1E293B] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
+        <div className="bg-[#1630A8] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
           <div className="flex justify-between items-start mb-2">
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Deployments Today</span>
-            <span className="p-1 rounded bg-blue-500/10 text-blue-400">
+            <span className="p-1 rounded bg-indigo-500/10 text-indigo-400">
               <Layers size={13} />
             </span>
           </div>
@@ -61,7 +61,7 @@ export default function DashboardView({
         </div>
 
         {/* Card 2: Active Incidents */}
-        <div className="bg-[#1E293B] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
+        <div className="bg-[#1630A8] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
           <div className="flex justify-between items-start mb-2">
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Active Incidents</span>
             <span className="p-1 rounded bg-rose-500/10 text-rose-400">
@@ -81,7 +81,7 @@ export default function DashboardView({
         </div>
 
         {/* Card 3: Open Alerts */}
-        <div className="bg-[#1E293B] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
+        <div className="bg-[#1630A8] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
           <div className="flex justify-between items-start mb-2">
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Open Alerts</span>
             <span className="p-1 rounded bg-amber-500/10 text-amber-400">
@@ -95,7 +95,7 @@ export default function DashboardView({
         </div>
 
         {/* Card 4: System Health */}
-        <div className="bg-[#1E293B] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
+        <div className="bg-[#1630A8] p-5 rounded-xl border border-slate-800 shadow-sm hover:border-slate-700 transition-colors">
           <div className="flex justify-between items-start mb-2">
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Services Monitored</span>
             <span className="p-1 rounded bg-emerald-500/10 text-emerald-400">
@@ -112,10 +112,10 @@ export default function DashboardView({
       {/* Main Two-Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Recent Deployments Table */}
-        <div className="lg:col-span-8 bg-[#1E293B] rounded-xl border border-slate-800 overflow-hidden shadow-sm flex flex-col">
+        <div className="lg:col-span-8 bg-[#1630A8] rounded-xl border border-slate-800 overflow-hidden shadow-sm flex flex-col">
           <div className="px-6 py-4.5 border-b border-slate-800/80 flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <Layers size={15} className="text-blue-400" />
+              <Layers size={15} className="text-indigo-400" />
               <h2 className="text-sm font-bold text-white">Deployment Status</h2>
             </div>
             <button 
@@ -123,7 +123,7 @@ export default function DashboardView({
                 setSelectedDeploymentId(deployments[0]?.id || null);
                 setScreen("DEPLOYMENT_DETAIL");
               }}
-              className="text-[10px] text-[#38BDF8] hover:underline uppercase tracking-wider font-bold transition-all"
+              className="text-[10px] text-[#4F6EF7] hover:underline uppercase tracking-wider font-bold transition-all"
             >
               View Detail System
             </button>
@@ -146,7 +146,7 @@ export default function DashboardView({
                     onClick={() => handleDeploymentClick(dep)}
                     className="hover:bg-slate-800/40 cursor-pointer transition-all group"
                   >
-                    <td className="px-6 py-3.5 font-mono font-bold text-white group-hover:text-[#38BDF8]">
+                    <td className="px-6 py-3.5 font-mono font-bold text-white group-hover:text-[#4F6EF7]">
                       {dep.name} <span className="font-semibold text-slate-400 ml-1">{dep.version}</span>
                     </td>
                     <td className="px-6 py-3.5 text-slate-300">{dep.environment}</td>
@@ -174,7 +174,7 @@ export default function DashboardView({
         </div>
 
         {/* Right Column: System Health Status */}
-        <div className="lg:col-span-4 bg-[#1E293B] rounded-xl border border-slate-800 p-6 flex flex-col justify-between shadow-sm">
+        <div className="lg:col-span-4 bg-[#1630A8] rounded-xl border border-slate-800 p-6 flex flex-col justify-between shadow-sm">
           <div>
             <div className="flex items-center justify-between mb-4.5 border-b border-slate-800/70 pb-3">
               <h2 className="text-sm font-bold text-white">System Service Health</h2>
@@ -204,16 +204,16 @@ export default function DashboardView({
 
           <div className="mt-5 pt-4.5 border-t border-slate-800 flex items-center justify-between text-[11px]">
             <span className="text-slate-500 uppercase tracking-widest font-bold text-[9px]">Active Cluster</span>
-            <span className="text-[#38BDF8] font-mono bg-[#38BDF8]/10 px-2 py-0.5 rounded border border-[#38BDF8]/20 font-bold">us-east-1</span>
+            <span className="text-[#4F6EF7] font-mono bg-[#4F6EF7]/10 px-2 py-0.5 rounded border border-[#4F6EF7]/20 font-bold">us-east-1</span>
           </div>
         </div>
       </div>
 
       {/* Active Incidents Feed Block */}
-      <div className="bg-[#1E293B] rounded-xl border border-slate-800 shadow-sm p-6">
+      <div className="bg-[#1630A8] rounded-xl border border-slate-800 shadow-sm p-6">
         <div className="flex items-center justify-between border-b border-slate-800/80 pb-4.5 mb-4">
           <div className="flex items-center space-x-2">
-            <AlertCircle size={15} className="text-[#38BDF8]" />
+            <AlertCircle size={15} className="text-[#4F6EF7]" />
             <h2 className="text-sm font-bold text-white">Active Incidents Feed</h2>
           </div>
           <span className="text-xs text-slate-400 block font-mono">Select to edit updates</span>
@@ -224,7 +224,7 @@ export default function DashboardView({
             <div 
               key={inc.id}
               onClick={() => handleIncidentClick(inc)}
-              className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 hover:bg-[#1E293B] cursor-pointer transition-all flex flex-col justify-between"
+              className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 hover:bg-[#1630A8] cursor-pointer transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -237,7 +237,7 @@ export default function DashboardView({
                   </span>
                   <span className="text-[10px] text-slate-500 font-mono font-bold">{inc.id}</span>
                 </div>
-                <h3 className="text-sm font-bold text-slate-200 mb-1 group-hover:text-[#38BDF8]">
+                <h3 className="text-sm font-bold text-slate-200 mb-1 group-hover:text-[#4F6EF7]">
                   {inc.title}
                 </h3>
                 <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
@@ -247,7 +247,7 @@ export default function DashboardView({
 
               <div className="mt-4 pt-3.5 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
                 <span>Opened: {inc.timeOpened}</span>
-                <span className="text-[#38BDF8] font-bold flex items-center gap-0.5 hover:underline">
+                <span className="text-[#4F6EF7] font-bold flex items-center gap-0.5 hover:underline">
                   Investigate <ArrowRight size={11} className="mt-0.5" />
                 </span>
               </div>
@@ -258,12 +258,12 @@ export default function DashboardView({
 
       {/* AI Assistant Summary Panel Banner */}
       {showAISummary && (
-        <div className="bg-gradient-to-br from-[#1E293B] to-[#1E293B]/60 p-6 rounded-xl border border-[#38BDF8]/30 shadow-lg relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#1630A8] to-[#1630A8]/60 p-6 rounded-xl border border-[#4F6EF7]/30 shadow-lg relative overflow-hidden">
           {/* Ambient background glow */}
-          <div className="absolute right-0 top-0 w-64 h-64 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute right-0 top-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="flex items-start space-x-4 relative z-10">
-            <div className="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center text-[#38BDF8] shrink-0 border border-sky-400/20">
+            <div className="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-[#4F6EF7] shrink-0 border border-indigo-400/20">
               <Cpu size={20} className="animate-pulse" />
             </div>
             <div className="flex-1 space-y-2">
@@ -271,12 +271,12 @@ export default function DashboardView({
                 <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
                   AI Insight Summary <span className="text-[10px] uppercase font-mono font-bold text-slate-500">StackUp-GenAI</span>
                 </h3>
-                <span className="text-[9px] px-2 py-0.5 bg-[#38BDF8]/10 text-[#38BDF8] rounded-full border border-[#38BDF8]/20 font-bold uppercase tracking-wider">
+                <span className="text-[9px] px-2 py-0.5 bg-[#4F6EF7]/10 text-[#4F6EF7] rounded-full border border-[#4F6EF7]/20 font-bold uppercase tracking-wider">
                   Analysis Active
                 </span>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed max-w-4xl">
-                3 alert signals correlate perfectly with the <span className="text-[#38BDF8] font-mono font-bold">api-gateway v2.4.1</span> deployment. Probable cause points to an increased backend request timeout constraint limiting downstream service connection channels.
+                3 alert signals correlate perfectly with the <span className="text-[#4F6EF7] font-mono font-bold">api-gateway v2.4.1</span> deployment. Probable cause points to an increased backend request timeout constraint limiting downstream service connection channels.
               </p>
               <div className="flex flex-wrap gap-2.5 pt-2">
                 <button 
@@ -284,7 +284,7 @@ export default function DashboardView({
                     setSelectedDeploymentId("dep-1");
                     setScreen("DEPLOYMENT_DETAIL");
                   }}
-                  className="text-xs font-bold px-4 py-1.5 bg-[#38BDF8] hover:bg-sky-400 text-slate-900 rounded-lg shadow-md transition-all active:scale-95 cursor-pointer"
+                  className="text-xs font-bold px-4 py-1.5 bg-[#4F6EF7] hover:bg-indigo-400 text-slate-900 rounded-lg shadow-md transition-all active:scale-95 cursor-pointer"
                 >
                   View System Logs
                 </button>
@@ -317,3 +317,4 @@ export default function DashboardView({
     </div>
   );
 }
+

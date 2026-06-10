@@ -51,7 +51,7 @@ export default function CollaborationView({
               onClick={() => setSelectedFilter(fil)}
               className={`px-4 py-2 rounded-lg transition-all text-xs font-bold leading-none cursor-pointer ${
                 selectedFilter === fil
-                  ? "bg-slate-800 text-white border border-[#38BDF8]/20 shadow-sm"
+                  ? "bg-slate-800 text-white border border-[#4F6EF7]/20 shadow-sm"
                   : "text-slate-400 hover:text-slate-100"
               }`}
             >
@@ -67,7 +67,7 @@ export default function CollaborationView({
         {/* Left Side: Composer and Mentions Feed */}
         <div className="lg:col-span-8 flex flex-col space-y-5">
           {/* Status Update Composer */}
-          <div className="bg-[#1E293B] p-5.5 rounded-xl border border-slate-800 shadow-sm space-y-3">
+          <div className="bg-[#1630A8] p-5.5 rounded-xl border border-slate-800 shadow-sm space-y-3">
             <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Public Status Update Composer</span>
             <form onSubmit={handleComposeSubmit} className="flex gap-2.5">
               <input
@@ -76,12 +76,12 @@ export default function CollaborationView({
                 onChange={(e) => setComposeText(e.target.value)}
                 placeholder="Share a diagnostics result, pipeline review note, or check-off item update with your team..."
                 id="collab-status-composer"
-                className="flex-1 bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-200 placeholder-slate-550 text-xs outline-none hover:border-slate-700 focus:border-[#38BDF8]"
+                className="flex-1 bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-200 placeholder-slate-550 text-xs outline-none hover:border-slate-700 focus:border-[#4F6EF7]"
               />
               <button
                 type="submit"
                 id="collab-post-update-btn"
-                className="px-4.5 bg-[#38BDF8] hover:bg-sky-400 text-slate-950 font-extrabold text-xs rounded-lg transition-all active:scale-95 cursor-pointer flex items-center gap-1.5 shrink-0"
+                className="px-4.5 bg-[#4F6EF7] hover:bg-indigo-400 text-slate-950 font-extrabold text-xs rounded-lg transition-all active:scale-95 cursor-pointer flex items-center gap-1.5 shrink-0"
               >
                 <Send size={11} />
                 <span>Post Update</span>
@@ -94,7 +94,7 @@ export default function CollaborationView({
             {filteredMentions.map((item) => (
               <div 
                 key={item.id}
-                className="bg-[#1E293B] p-4.5 rounded-xl border border-slate-800 shadow-sm flex items-start space-x-3.5 hover:border-slate-700 transition-[#0F172A]"
+                className="bg-[#1630A8] p-4.5 rounded-xl border border-slate-800 shadow-sm flex items-start space-x-3.5 hover:border-slate-700 transition-[#1A2260]"
               >
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 text-white font-bold flex items-center justify-center shrink-0 self-start text-xs font-mono">
                   {item.user.replace("@", "").substring(0, 2).toUpperCase()}
@@ -113,7 +113,7 @@ export default function CollaborationView({
                     <span className={`text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded border ${
                       item.filter === "Mentions" ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/15" :
                       item.filter === "Assignments" ? "bg-amber-500/10 text-amber-400 border-amber-500/15" :
-                      "bg-blue-500/10 text-blue-400 border-blue-500/15"
+                      "bg-indigo-500/10 text-indigo-400 border-indigo-500/15"
                     }`}>
                       {item.filter}
                     </span>
@@ -127,7 +127,7 @@ export default function CollaborationView({
         {/* Right Side: Team Presence and Shared action item tracking */}
         <div className="lg:col-span-4 space-y-5">
           {/* Team presence list */}
-          <div className="bg-[#1E293B] p-5.5 rounded-xl border border-slate-800 shadow-sm">
+          <div className="bg-[#1630A8] p-5.5 rounded-xl border border-slate-800 shadow-sm">
             <h3 className="text-xs font-bold text-white mb-4 uppercase tracking-widest border-b border-slate-850 pb-2.5">
               Active Team Presence
             </h3>
@@ -140,7 +140,7 @@ export default function CollaborationView({
                       <div className="w-8.5 h-8.5 rounded-full bg-slate-850 text-slate-300 flex items-center justify-center text-xs font-bold hover:opacity-90 cursor-pointer select-none font-mono">
                         {member.avatar}
                       </div>
-                      <span className={`absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full border border-[#111827] ${
+                      <span className={`absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full border border-[#1A2260] ${
                         member.status === "Online" ? "bg-emerald-400" :
                         member.status === "Away" ? "bg-amber-400" : "bg-slate-600"
                       }`} />
@@ -160,7 +160,7 @@ export default function CollaborationView({
           </div>
 
           {/* Core action tracker checkoffs cross-incident */}
-          <div className="bg-[#1E293B] p-5.5 rounded-xl border border-slate-800 shadow-sm space-y-3">
+          <div className="bg-[#1630A8] p-5.5 rounded-xl border border-slate-800 shadow-sm space-y-3">
             <h3 className="text-xs font-bold text-white uppercase tracking-widest border-b border-slate-850 pb-2.5">
               Cross-Incident Action
             </h3>
@@ -185,3 +185,4 @@ export default function CollaborationView({
     </div>
   );
 }
+

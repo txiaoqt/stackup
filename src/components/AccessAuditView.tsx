@@ -55,7 +55,7 @@ export default function AccessAuditView({
             onClick={() => setActiveTab("members")}
             className={`px-4 py-2 rounded-lg text-xs font-bold leading-none uppercase tracking-wider cursor-pointer transition-all ${
               activeTab === "members" 
-                ? "bg-slate-800 text-white border border-[#38BDF8]/20 shadow-sm"
+                ? "bg-slate-800 text-white border border-[#4F6EF7]/20 shadow-sm"
                 : "text-slate-400 hover:text-slate-100"
             }`}
           >
@@ -65,7 +65,7 @@ export default function AccessAuditView({
             onClick={() => setActiveTab("audit")}
             className={`px-4 py-2 rounded-lg text-xs font-bold leading-none uppercase tracking-wider cursor-pointer transition-all ${
               activeTab === "audit" 
-                ? "bg-slate-800 text-white border border-[#38BDF8]/20 shadow-sm"
+                ? "bg-slate-800 text-white border border-[#4F6EF7]/20 shadow-sm"
                 : "text-slate-400 hover:text-slate-100"
             }`}
           >
@@ -78,7 +78,7 @@ export default function AccessAuditView({
           <button
             onClick={() => setShowInviteModal(true)}
             id="members-invite-trigger-btn"
-            className="flex items-center gap-1.5 px-4.5 py-2 text-xs font-bold bg-[#38BDF8] text-slate-950 hover:bg-sky-400 rounded-lg transition-all active:scale-95 cursor-pointer shadow-md shadow-sky-400/10"
+            className="flex items-center gap-1.5 px-4.5 py-2 text-xs font-bold bg-[#4F6EF7] text-slate-950 hover:bg-indigo-400 rounded-lg transition-all active:scale-95 cursor-pointer shadow-md shadow-indigo-400/10"
           >
             <UserPlus size={13} />
             <span>Invite Team Member</span>
@@ -91,7 +91,7 @@ export default function AccessAuditView({
               onChange={(e) => setSearchAuditQuery(e.target.value)}
               placeholder="Filter audit logs..."
               id="audit-logs-search"
-              className="w-full bg-slate-900 border border-slate-800 pl-9 py-1.8 text-xs rounded-xl text-slate-100 outline-none hover:border-slate-705 focus:border-[#38BDF8]"
+              className="w-full bg-slate-900 border border-slate-800 pl-9 py-1.8 text-xs rounded-xl text-slate-100 outline-none hover:border-slate-705 focus:border-[#4F6EF7]"
             />
             <Search size={12} className="absolute left-3 top-2.5 text-slate-500" />
           </div>
@@ -100,10 +100,10 @@ export default function AccessAuditView({
 
       {/* Main Section Content blocks conditional */}
       {activeTab === "members" ? (
-        <div className="bg-[#1E293B] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
+        <div className="bg-[#1630A8] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
           <div className="px-6 py-4.5 border-b border-slate-850 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
-              <Users size={15} className="text-blue-400" />
+              <Users size={15} className="text-indigo-400" />
               <span>Workspace User Roles Management</span>
             </h3>
 
@@ -114,7 +114,7 @@ export default function AccessAuditView({
                 onChange={(e) => setSearchMemberQuery(e.target.value)}
                 placeholder="Search teammates..."
                 id="members-search-query"
-                className="w-full bg-slate-900 border border-slate-800/80 pl-9.5 pr-4 py-1.8 text-xs rounded-xl text-slate-100 outline-none hover:border-slate-700 focus:border-[#38BDF8]"
+                className="w-full bg-slate-900 border border-slate-800/80 pl-9.5 pr-4 py-1.8 text-xs rounded-xl text-slate-100 outline-none hover:border-slate-700 focus:border-[#4F6EF7]"
               />
               <Search size={12} className="absolute left-3.5 top-2.5 text-slate-500" />
             </div>
@@ -148,7 +148,7 @@ export default function AccessAuditView({
                       </select>
                     </td>
                     <td className="px-6 py-3.5">
-                      <span className="text-[10px] bg-slate-900 text-[#38BDF8] border border-[#38BDF8]/15 px-2 py-0.5 rounded font-mono font-bold">
+                      <span className="text-[10px] bg-slate-900 text-[#4F6EF7] border border-[#4F6EF7]/15 px-2 py-0.5 rounded font-mono font-bold">
                         {mem.permissions}
                       </span>
                     </td>
@@ -160,10 +160,10 @@ export default function AccessAuditView({
           </div>
         </div>
       ) : (
-        <div className="bg-[#1E293B] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
+        <div className="bg-[#1630A8] rounded-xl border border-slate-800 overflow-hidden shadow-sm">
           <div className="px-6 py-4.5 border-b border-slate-850 flex items-center justify-between">
             <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
-              <Terminal size={15} className="text-[#38BDF8]" />
+              <Terminal size={15} className="text-[#4F6EF7]" />
               <span>Team Operational Audit Stream Index</span>
             </h3>
             <span className="text-[10px] text-emerald-450 bg-emerald-500/10 px-2 py-0.5 rounded animate-pulse font-bold uppercase">
@@ -188,7 +188,7 @@ export default function AccessAuditView({
                     <td className="px-6 py-3.5 text-slate-450">{log.timestamp}</td>
                     <td className="px-6 py-3.5 font-sans font-bold text-slate-200">{log.actor}</td>
                     <td className="px-6 py-3.5 text-slate-300 font-sans">{log.action}</td>
-                    <td className="px-6 py-3.5 text-[#38BDF8] font-bold">{log.resource}</td>
+                    <td className="px-6 py-3.5 text-[#4F6EF7] font-bold">{log.resource}</td>
                     <td className="px-6 py-3.5 text-right text-slate-500">{log.ip}</td>
                   </tr>
                 ))}
@@ -201,10 +201,10 @@ export default function AccessAuditView({
       {/* Invite member modal overlay */}
       {showInviteModal && (
         <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-xs select-none">
-          <div className="bg-[#1E293B] border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl p-6 space-y-4">
+          <div className="bg-[#1630A8] border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl p-6 space-y-4">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h3 className="text-base font-bold text-white flex items-center gap-1.5 font-sans">
-                <UserPlus size={16} className="text-[#38BDF8]" />
+                <UserPlus size={16} className="text-[#4F6EF7]" />
                 <span>Invite teammate workspace</span>
               </h3>
               <button 
@@ -225,7 +225,7 @@ export default function AccessAuditView({
                   placeholder="teammate@organization.com"
                   id="invite-member-email"
                   required
-                  className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 placeholder-slate-550 outline-none hover:border-slate-700/80 focus:border-[#38BDF8]"
+                  className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 placeholder-slate-550 outline-none hover:border-slate-700/80 focus:border-[#4F6EF7]"
                 />
               </div>
 
@@ -235,7 +235,7 @@ export default function AccessAuditView({
                   value={inviteRole}
                   onChange={(e) => setInviteRole(e.target.value)}
                   id="invite-member-role-selector"
-                  className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-305 outline-none hover:border-slate-705 focus:border-[#38BDF8] cursor-pointer"
+                  className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-305 outline-none hover:border-slate-705 focus:border-[#4F6EF7] cursor-pointer"
                 >
                   <option value="Admin">Admin (All writes &amp; releases)</option>
                   <option value="Member">Member (Incidents &amp; writes)</option>
@@ -254,7 +254,7 @@ export default function AccessAuditView({
                 <button
                   type="submit"
                   id="invite-member-submit-btn"
-                  className="px-4.5 py-2 bg-[#38BDF8] text-slate-950 font-extrabold text-xs rounded-lg hover:bg-sky-400 transition-all shadow-md shadow-sky-400/10 cursor-pointer"
+                  className="px-4.5 py-2 bg-[#4F6EF7] text-slate-950 font-extrabold text-xs rounded-lg hover:bg-indigo-400 transition-all shadow-md shadow-indigo-400/10 cursor-pointer"
                 >
                   Send Invitation
                 </button>
@@ -266,3 +266,4 @@ export default function AccessAuditView({
     </div>
   );
 }
+

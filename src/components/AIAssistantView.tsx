@@ -61,16 +61,16 @@ export default function AIAssistantView({
     <div className="flex-grow p-8 space-y-6 overflow-y-auto" id="ai-assistant-view">
       
       {/* Alarm Alert Summary Header Card */}
-      <div className="bg-[#1E293B] p-6 rounded-xl border border-slate-805/85 shadow-sm">
+      <div className="bg-[#1630A8] p-6 rounded-xl border border-slate-805/85 shadow-sm">
         <div className="flex items-start gap-4">
-          <div className="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center text-[#38BDF8] border border-sky-450/20 shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-[#4F6EF7] border border-indigo-450/20 shrink-0">
             <Cpu size={20} className="animate-pulse" />
           </div>
 
           <div className="space-y-1.5 grow">
             <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
               <span>Alert Cluster Overview</span>
-              <span className="text-[10px] font-mono font-bold bg-[#38BDF8]/10 text-[#38BDF8] border border-[#38BDF8]/15 px-2 py-0.5 rounded uppercase">
+              <span className="text-[10px] font-mono font-bold bg-[#4F6EF7]/10 text-[#4F6EF7] border border-[#4F6EF7]/15 px-2 py-0.5 rounded uppercase">
                 Active Telemetry Cluster
               </span>
             </h3>
@@ -85,7 +85,7 @@ export default function AIAssistantView({
         {/* Left column: Cause hypotheses lists & recommended action cards */}
         <div className="lg:col-span-7 space-y-6">
           {/* Confidences Cause Section */}
-          <div className="bg-[#1E293B] p-5.5 rounded-xl border border-slate-800 shadow-sm">
+          <div className="bg-[#1630A8] p-5.5 rounded-xl border border-slate-800 shadow-sm">
             <h3 className="text-xs font-bold text-slate-400 mb-4 uppercase tracking-wider border-b border-slate-850 pb-2.5">
               Hypothetical Diagnostic Probable Causes
             </h3>
@@ -95,7 +95,7 @@ export default function AIAssistantView({
                 <div key={item.id} className="p-3.5 bg-slate-900/30 border border-slate-850 rounded-lg space-y-1">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-slate-200">{item.cause}</span>
-                    <span className="text-xs font-bold font-mono text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 px-2 py-0.5 rounded">
+                    <span className="text-xs font-bold font-mono text-[#4F6EF7] bg-[#4F6EF7]/10 border border-[#4F6EF7]/20 px-2 py-0.5 rounded">
                       {item.confidence}% confidence
                     </span>
                   </div>
@@ -106,7 +106,7 @@ export default function AIAssistantView({
           </div>
 
           {/* AI recommendations checklists with applying state toggles */}
-          <div className="bg-[#1E293B] p-5.5 rounded-xl border border-slate-800 shadow-sm">
+          <div className="bg-[#1630A8] p-5.5 rounded-xl border border-slate-800 shadow-sm">
             <h3 className="text-xs font-bold text-slate-400 mb-4.5 uppercase tracking-wider border-b border-slate-850 pb-2.5">
               Recommended Incident Actions
             </h3>
@@ -119,7 +119,7 @@ export default function AIAssistantView({
                   const feedback = likedSuggestions[rec.id];
 
                   return (
-                    <div key={rec.id} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800/80 hover:border-slate-700 transition-[#0F172A] flex flex-col justify-between gap-3 relative">
+                    <div key={rec.id} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800/80 hover:border-slate-700 transition-[#1A2260] flex flex-col justify-between gap-3 relative">
                       <div className="flex items-start justify-between">
                         <div>
                           <span className="text-xs font-extrabold text-slate-200 block mb-0.5">{rec.title}</span>
@@ -163,7 +163,7 @@ export default function AIAssistantView({
                           className={`px-3 py-1 font-extrabold rounded-md transition-all flex items-center gap-1 cursor-pointer ${
                             applied 
                               ? "bg-slate-800 text-emerald-450 border border-emerald-500/20" 
-                              : "bg-[#38BDF8] text-slate-950 hover:bg-sky-400"
+                              : "bg-[#4F6EF7] text-slate-950 hover:bg-indigo-400"
                           }`}
                         >
                           {applied ? (
@@ -184,10 +184,10 @@ export default function AIAssistantView({
         </div>
 
         {/* Right column: Conversational server side Gemini chat assistant stream */}
-        <div className="lg:col-span-5 bg-[#1E293B] p-6 rounded-xl border border-slate-800 flex flex-col justify-between h-[650px] shadow-sm">
+        <div className="lg:col-span-5 bg-[#1630A8] p-6 rounded-xl border border-slate-800 flex flex-col justify-between h-[650px] shadow-sm">
           <div className="flex-grow flex flex-col justify-between overflow-hidden">
             <div className="h-10 border-b border-slate-800 pb-3 flex items-center space-x-2 shrink-0">
-              <Sparkles size={14} className="text-[#38BDF8]" />
+              <Sparkles size={14} className="text-[#4F6EF7]" />
               <h3 className="text-xs font-bold text-white uppercase font-mono">Live DevOps Chat Sandbox</h3>
             </div>
 
@@ -198,14 +198,14 @@ export default function AIAssistantView({
                   item.role === "user" ? "ml-auto flex-row-reverse" : "mr-auto"
                 }`}>
                   <div className={`p-1.5 rounded-lg shrink-0 ${
-                    item.role === "user" ? "bg-blue-600 text-white" : "bg-slate-800 text-[#38BDF8]"
+                    item.role === "user" ? "bg-indigo-600 text-white" : "bg-slate-800 text-[#4F6EF7]"
                   }`}>
                     {item.role === "user" ? "U" : "AI"}
                   </div>
 
                   <div className={`p-3 rounded-xl border ${
                     item.role === "user" 
-                      ? "bg-blue-500/10 border-blue-500/20 text-slate-100" 
+                      ? "bg-indigo-500/10 border-indigo-500/20 text-slate-100" 
                       : "bg-slate-900 border-slate-850 text-slate-300 leading-relaxed font-sans"
                   }`}>
                     {item.content}
@@ -215,7 +215,7 @@ export default function AIAssistantView({
 
               {isGeneratingChat && (
                 <div className="flex items-center space-x-2 text-slate-500 animate-pulse text-[11px] font-mono leading-none">
-                  <div className="w-2 h-2 bg-[#38BDF8] rounded-full animate-bounce" />
+                  <div className="w-2 h-2 bg-[#4F6EF7] rounded-full animate-bounce" />
                   <span>AI assistant is formulating telemetry response...</span>
                 </div>
               )}
@@ -230,12 +230,12 @@ export default function AIAssistantView({
               onChange={(e) => setChatInput(e.target.value)}
               placeholder="Ask AI assistant about INC-2041 logs analysis..."
               id="ai-chat-input"
-              className="flex-1 bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-100 placeholder-slate-550 text-xs outline-none hover:border-slate-700 focus:border-[#38BDF8]"
+              className="flex-1 bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-100 placeholder-slate-550 text-xs outline-none hover:border-slate-700 focus:border-[#4F6EF7]"
             />
             <button
               type="submit"
               id="ai-submit-chat-btn"
-              className="p-2.5 bg-[#38BDF8] hover:bg-sky-400 text-slate-950 rounded-lg transition-all cursor-pointer shadow-md shadow-sky-400/10"
+              className="p-2.5 bg-[#4F6EF7] hover:bg-indigo-400 text-slate-950 rounded-lg transition-all cursor-pointer shadow-md shadow-indigo-400/10"
             >
               <Send size={14} />
             </button>
@@ -245,3 +245,4 @@ export default function AIAssistantView({
     </div>
   );
 }
+

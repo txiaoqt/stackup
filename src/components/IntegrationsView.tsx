@@ -40,7 +40,7 @@ export default function IntegrationsView({
               onClick={() => setSelectedCategory(cat)}
               className={`px-3.5 py-2 rounded-lg transition-all text-xs font-bold leading-none cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-slate-800 text-white border border-[#38BDF8]/20"
+                  ? "bg-slate-800 text-white border border-[#4F6EF7]/20"
                   : "text-slate-400 hover:text-slate-100"
               }`}
             >
@@ -56,14 +56,14 @@ export default function IntegrationsView({
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search integrations..."
             id="integrations-search-query"
-            className="w-full bg-slate-900 border border-slate-800 pl-9.5 pr-4 py-2 text-xs rounded-xl text-slate-100 outline-none hover:border-slate-705 focus:border-[#38BDF8]"
+            className="w-full bg-slate-900 border border-slate-800 pl-9.5 pr-4 py-2 text-xs rounded-xl text-slate-100 outline-none hover:border-slate-705 focus:border-[#4F6EF7]"
           />
           <Search size={13} className="absolute left-3.5 top-2.5 text-slate-500" />
         </div>
       </div>
 
       {/* Connected Integrations Summary Banner Strip */}
-      <div className="bg-[#1E293B] px-5.5 py-4 rounded-xl border border-slate-800/80 shadow-sm flex items-center justify-between">
+      <div className="bg-[#1630A8] px-5.5 py-4 rounded-xl border border-slate-800/80 shadow-sm flex items-center justify-between">
         <span className="text-xs text-slate-300 font-semibold flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>Active Connections: <strong className="text-white font-bold">{connectedCount} integrations</strong> are connected to Acme team.</span>
@@ -76,14 +76,14 @@ export default function IntegrationsView({
         {filteredTools.map((tool) => (
           <div 
             key={tool.id}
-            className={`p-5 rounded-xl bg-[#1E293B] border transition-all flex flex-col justify-between h-[180px] ${
-              tool.connected ? "border-[#38BDF8]/30 shadow-md shadow-blue-500/5 hover:border-[#38BDF8]/40" : "border-slate-800 hover:border-slate-700/80"
+            className={`p-5 rounded-xl bg-[#1630A8] border transition-all flex flex-col justify-between h-[180px] ${
+              tool.connected ? "border-[#4F6EF7]/30 shadow-md shadow-indigo-500/5 hover:border-[#4F6EF7]/40" : "border-slate-800 hover:border-slate-700/80"
             }`}
           >
             <div>
               <div className="flex items-center justify-between mb-3">
                 {/* Simulated dynamic logo block */}
-                <div className="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center border border-slate-800 shadow text-xs font-mono font-extrabold text-[#38BDF8]">
+                <div className="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center border border-slate-800 shadow text-xs font-mono font-extrabold text-[#4F6EF7]">
                   {tool.name.substring(0, 2).toUpperCase()}
                 </div>
 
@@ -107,7 +107,7 @@ export default function IntegrationsView({
                 className="text-slate-400 hover:text-white flex items-center gap-1 transition-all cursor-pointer font-bold"
               >
                 {tool.connected ? (
-                  <ToggleRight size={22} className="text-[#38BDF8]" />
+                  <ToggleRight size={22} className="text-[#4F6EF7]" />
                 ) : (
                   <ToggleLeft size={22} className="text-slate-500" />
                 )}
@@ -119,3 +119,4 @@ export default function IntegrationsView({
     </div>
   );
 }
+

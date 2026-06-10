@@ -50,7 +50,7 @@ export default function TopBar({ currentScreen, onNewIncident, onDeployRelease, 
   };
 
   return (
-    <header className="h-16 bg-[#0F172A] border-b border-slate-800/80 flex items-center justify-between px-8 select-none shrink-0" id="app-topbar">
+    <header className="h-16 bg-[#1A2260] border-b border-slate-800/80 flex items-center justify-between px-8 select-none shrink-0" id="app-topbar">
       <div className="flex items-center space-x-2 text-sm text-slate-200">
         {getBreadcrumb()}
       </div>
@@ -77,7 +77,7 @@ export default function TopBar({ currentScreen, onNewIncident, onDeployRelease, 
         <button
           onClick={onNewIncident}
           id="topbar-incident-btn"
-          className="flex items-center gap-1.5 px-4.5 py-1.5 text-xs bg-[#38BDF8] text-slate-950 font-bold rounded-lg hover:bg-sky-400 transition-all border border-sky-400/20 active:scale-95 cursor-pointer shadow-md shadow-sky-400/10"
+          className="flex items-center gap-1.5 px-4.5 py-1.5 text-xs bg-[#4F6EF7] text-slate-950 font-bold rounded-lg hover:bg-indigo-400 transition-all border border-indigo-400/20 active:scale-95 cursor-pointer shadow-md shadow-indigo-400/10"
         >
           <PlusCircle size={13} />
           <span>New Incident</span>
@@ -86,3 +86,4 @@ export default function TopBar({ currentScreen, onNewIncident, onDeployRelease, 
     </header>
   );
 }
+

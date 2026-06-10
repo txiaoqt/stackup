@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UserProfile, AppScreen } from "../types";
 import { ChevronRight, Settings2, Sparkles, Check, CheckCircle2 } from "lucide-react";
+import stackupLogo from "../../assets/stackup-logo.png";
 
 interface AccountSetupProps {
   onFinishSetup: (profile: Partial<UserProfile>) => void;
@@ -41,17 +42,15 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
   };
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-slate-100 flex flex-col justify-between p-6 relative overflow-hidden select-none">
+    <div className="min-h-screen bg-[#1A2260] text-slate-100 flex flex-col justify-between p-6 relative overflow-hidden select-none">
       {/* Background soft highlights */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-indigo-600/5 rounded-full blur-[90px] pointer-events-none" />
 
       {/* Header bar */}
       <div className="flex items-center justify-between z-10 max-w-4xl w-full mx-auto">
         <div className="flex items-center gap-2">
-          {/* Logo */}
-          <div className="flex flex-col space-y-0.5 p-1.5 bg-[#1E293B] border border-blue-500/25 rounded-lg">
-            <div className="w-5 h-1 bg-gradient-to-r from-blue-500 to-[#38BDF8] rounded-sm" />
-            <div className="w-5 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-sm transform translate-x-1" />
+          <div className="w-8 h-8 bg-[#E8ECFE] border border-[#4F6EF7]/35 rounded-lg flex items-center justify-center">
+            <img src={stackupLogo} alt="" className="w-6.5 h-6.5 object-contain" />
           </div>
           <span className="font-bold tracking-tight text-sm">StackUp</span>
         </div>
@@ -66,7 +65,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
       </div>
 
       {/* Main card box */}
-      <div className="max-w-lg w-full bg-[#1E293B] border border-slate-800 rounded-2xl p-6.5 mx-auto my-auto z-10 shadow-2xl relative overflow-hidden space-y-5">
+      <div className="max-w-lg w-full bg-[#1630A8] border border-slate-800 rounded-2xl p-6.5 mx-auto my-auto z-10 shadow-2xl relative overflow-hidden space-y-5">
         
         {/* Step circles info bar */}
         <div className="flex items-center justify-between border-b border-slate-800 pb-4">
@@ -79,7 +78,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
               {step === 4 && "Choose Control Preferences"}
             </h2>
           </div>
-          <span className="text-xs font-semibold font-mono text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/15 px-2.5 py-0.5 rounded uppercase">
+          <span className="text-xs font-semibold font-mono text-[#4F6EF7] bg-[#4F6EF7]/10 border border-[#4F6EF7]/15 px-2.5 py-0.5 rounded uppercase">
             Step {step} of 4
           </span>
         </div>
@@ -95,7 +94,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="Aly D."
                 id="setup-fullname-input"
-                className="w-full text-xs bg-slate-905 bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-200 placeholder-slate-500 outline-none hover:border-slate-700 focus:border-[#38BDF8]"
+                className="w-full text-xs bg-slate-905 bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-200 placeholder-slate-500 outline-none hover:border-slate-700 focus:border-[#4F6EF7]"
               />
             </div>
 
@@ -107,7 +106,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
                 onChange={(e) => setJobTitle(e.target.value)}
                 placeholder="DevOps Architect / Release Manager"
                 id="setup-jobtitle-input"
-                className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 placeholder-slate-550 outline-none hover:border-slate-705 focus:border-[#38BDF8]"
+                className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 placeholder-slate-550 outline-none hover:border-slate-705 focus:border-[#4F6EF7]"
               />
             </div>
 
@@ -117,7 +116,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
                 value={timezone}
                 onChange={(e) => setTimezone(e.target.value)}
                 id="setup-timezone-selector"
-                className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none cursor-pointer hover:border-slate-705 focus:border-[#38BDF8]"
+                className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none cursor-pointer hover:border-slate-705 focus:border-[#4F6EF7]"
               >
                 <option value="UTC -4 (Eastern Time)">UTC -4 (Eastern Time)</option>
                 <option value="UTC -5 (Central Time)">UTC -5 (Central Time)</option>
@@ -139,7 +138,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
                 onChange={(e) => setTeamName(e.target.value)}
                 placeholder="Acme DevOps Squad"
                 id="setup-teamname-input"
-                className="w-full text-xs bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-200 placeholder-slate-500 outline-none hover:border-slate-700 focus:border-[#38BDF8]"
+                className="w-full text-xs bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-slate-200 placeholder-slate-500 outline-none hover:border-slate-700 focus:border-[#4F6EF7]"
               />
             </div>
 
@@ -149,7 +148,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
                 value={teamSize}
                 onChange={(e) => setTeamSize(e.target.value)}
                 id="setup-teamsize-selector"
-                className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none cursor-pointer hover:border-slate-705 focus:border-[#38BDF8]"
+                className="w-full text-xs bg-slate-900 border border-slate-850 p-2.5 rounded-lg text-slate-300 outline-none cursor-pointer hover:border-slate-705 focus:border-[#4F6EF7]"
               >
                 <option value="1 - 5 Members">1 - 5 Members</option>
                 <option value="5 - 15 Members">5 - 15 Members</option>
@@ -174,12 +173,12 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
                 onClick={() => toggleTool(tool.id)}
                 className={`p-3 rounded-lg border flex items-center justify-between cursor-pointer select-none transition-all ${
                   selectedTools[tool.id] 
-                    ? "border-[#38BDF8]/40 bg-[#38BDF8]/5 text-[#38BDF8]" 
+                    ? "border-[#4F6EF7]/40 bg-[#4F6EF7]/5 text-[#4F6EF7]" 
                     : "border-slate-800 bg-slate-900/30 text-slate-400 hover:border-slate-750"
                 }`}
               >
                 <div className="flex items-center space-x-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#4F6EF7]" />
                   <div>
                     <span className="text-xs font-bold text-slate-200 block">{tool.label}</span>
                     <span className="text-[9px] text-slate-500 font-mono font-medium">{tool.syncState}</span>
@@ -187,7 +186,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
                 </div>
 
                 <div className={`p-1 rounded-full border ${
-                  selectedTools[tool.id] ? "bg-[#38BDF8] border-sky-450 text-slate-950" : "border-slate-800 text-transparent"
+                  selectedTools[tool.id] ? "bg-[#4F6EF7] border-indigo-450 text-slate-950" : "border-slate-800 text-transparent"
                 }`}>
                   <Check size={10} className="stroke-[3.5]" />
                 </div>
@@ -201,17 +200,17 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
           <div className="space-y-4">
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Assigned Interface Theme Preset</label>
-              <div className="p-3.5 bg-slate-900 border border-[#38BDF8]/30 rounded-lg flex items-center justify-between">
+              <div className="p-3.5 bg-slate-900 border border-[#4F6EF7]/30 rounded-lg flex items-center justify-between">
                 <div>
                   <span className="text-xs font-bold text-white block">Clean Minimalism</span>
                   <p className="text-[11px] text-slate-400 leading-normal mt-0.5">High-contrast, elegant off-whites and dark slate grays.</p>
                 </div>
-                <CheckCircle2 size={16} className="text-[#38BDF8]" />
+                <CheckCircle2 size={16} className="text-[#4F6EF7]" />
               </div>
             </div>
 
             <div className="space-y-1 bg-slate-900/30 p-3.5 rounded-xl border border-slate-850/70">
-              <span className="text-[10px] text-[#38BDF8] font-bold uppercase tracking-wider block mb-1 flex items-center gap-1">
+              <span className="text-[10px] text-[#4F6EF7] font-bold uppercase tracking-wider block mb-1 flex items-center gap-1">
                 <Sparkles size={11} className="animate-pulse" /> Welcome Ready
               </span>
               <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
@@ -236,7 +235,7 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
           <button
             onClick={handleNextStep}
             id="setup-next-step-btn"
-            className="px-5 py-2.5 bg-[#38BDF8] text-slate-950 font-extrabold text-xs rounded-lg hover:bg-sky-400 hover:text-slate-900 transition-all flex items-center gap-1 select-none cursor-pointer"
+            className="px-5 py-2.5 bg-[#4F6EF7] text-slate-950 font-extrabold text-xs rounded-lg hover:bg-indigo-400 hover:text-slate-900 transition-all flex items-center gap-1 select-none cursor-pointer"
           >
             <span>{step === 4 ? "Complete Setup" : "Next Step"}</span>
             <ChevronRight size={13} />
@@ -250,3 +249,4 @@ export default function AccountSetup({ onFinishSetup, onSkipSetup }: AccountSetu
     </div>
   );
 }
+

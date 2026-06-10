@@ -489,7 +489,7 @@ export default function App() {
       default:
         // Authenticated frames displaying left Sidebar & Top header navigation
         return (
-          <div className="flex h-screen bg-[#0F172A] overflow-hidden font-sans text-slate-100" id="main-portal">
+          <div className="flex h-screen bg-[#1A2260] overflow-hidden font-sans text-slate-100" id="main-portal">
             {/* Left Sidebar Frame Nav */}
             <Sidebar 
               currentScreen={screen} 
@@ -509,7 +509,7 @@ export default function App() {
               />
 
               {/* View body */}
-              <div className="flex-1 flex flex-col overflow-hidden bg-[#0F172AD8]">
+              <div className="flex-1 flex flex-col overflow-hidden bg-[#1A2260D8]">
                 {screen === "DASHBOARD" && (
                   <DashboardView 
                     deployments={deployments} 
@@ -598,8 +598,9 @@ export default function App() {
   };
 
   return (
-    <div className="w-full h-full min-h-screen bg-[#0F172A] relative overflow-hidden text-slate-100 flex flex-col" id="stackup-root">
+    <div className="w-full h-full min-h-screen bg-[#1A2260] relative overflow-hidden text-slate-100 flex flex-col" id="stackup-root">
       {renderScreenContent()}
     </div>
   );
 }
+

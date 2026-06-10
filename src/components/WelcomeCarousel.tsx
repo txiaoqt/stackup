@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Layers, AlertTriangle, Cpu, Users, ChevronRight, ArrowRight } from "lucide-react";
+import stackupLogo from "../../assets/stackup-logo.png";
 
 interface WelcomeCarouselProps {
   onFinish: () => void;
@@ -24,9 +25,9 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
       title: "Unified Deployment Dashboard",
       description: "Track releases, environments, rollback history, and affected services in one place.",
       icon: Layers,
-      colorClass: "from-blue-500 to-cyan-400",
+      colorClass: "from-indigo-500 to-[#E8ECFE]",
       illustration: (
-        <div className="w-full h-full bg-[#1A2536] border border-blue-500/20 rounded-xl p-4 flex flex-col justify-between text-xs font-mono">
+        <div className="w-full h-full bg-[#1630A8] border border-indigo-500/20 rounded-xl p-4 flex flex-col justify-between text-xs font-mono">
           <div className="flex items-center justify-between border-b border-slate-800 pb-2">
             <span className="text-slate-400 font-semibold text-[10px]">DEPLOYMENTS</span>
             <span className="px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 scale-90">1 Failed</span>
@@ -47,7 +48,7 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
               <span className="px-1.5 py-0.2 bg-yellow-950 text-yellow-400 rounded text-[9px] uppercase font-bold border border-yellow-500/35">Pending</span>
             </div>
           </div>
-          <div className="text-[10px] text-blue-400 flex items-center justify-end gap-1">
+          <div className="text-[10px] text-indigo-400 flex items-center justify-end gap-1">
             <span>Click row for timelines</span>
             <ChevronRight size={10} />
           </div>
@@ -60,7 +61,7 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
       icon: AlertTriangle,
       colorClass: "from-red-500 to-amber-500",
       illustration: (
-        <div className="w-full h-full bg-[#1A2536] border border-red-500/20 rounded-xl p-4 flex flex-col justify-between text-xs font-mono">
+        <div className="w-full h-full bg-[#1630A8] border border-red-500/20 rounded-xl p-4 flex flex-col justify-between text-xs font-mono">
           <div className="flex items-center gap-1.5 text-red-400 border-b border-slate-800 pb-2">
             <span className="font-semibold text-[10px]">CRITICAL</span>
             <span className="text-slate-300">INC-2041: Latency Spike</span>
@@ -92,7 +93,7 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
       icon: Cpu,
       colorClass: "from-indigo-500 to-purple-400",
       illustration: (
-        <div className="w-full h-full bg-[#1E293B] border border-blue-500/30 rounded-xl p-4 flex flex-col justify-between text-xs font-sans">
+        <div className="w-full h-full bg-[#1630A8] border border-indigo-500/30 rounded-xl p-4 flex flex-col justify-between text-xs font-sans">
           <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
             <div className="p-1 rounded bg-indigo-500/10 text-indigo-400">
               <Cpu size={12} className="animate-pulse" />
@@ -118,18 +119,18 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
       icon: Users,
       colorClass: "from-emerald-500 to-teal-400",
       illustration: (
-        <div className="w-full h-full bg-[#1A2536] border border-emerald-500/20 rounded-xl p-4 flex flex-col justify-between text-xs font-sans">
+        <div className="w-full h-full bg-[#1630A8] border border-emerald-500/20 rounded-xl p-4 flex flex-col justify-between text-xs font-sans">
           <div className="flex items-center justify-between border-b border-slate-800 pb-2">
             <span className="text-slate-400 font-semibold text-[10px] font-mono">TEAM UPDATES</span>
             <div className="flex -space-x-1">
-              <span className="w-4 h-4 bg-blue-500 text-white rounded-full flex items-center justify-center text-[8px] font-bold">AD</span>
+              <span className="w-4 h-4 bg-indigo-500 text-white rounded-full flex items-center justify-center text-[8px] font-bold">AD</span>
               <span className="w-4 h-4 bg-emerald-500 text-white rounded-full flex items-center justify-center text-[8px] font-bold">ND</span>
               <span className="w-4 h-4 bg-purple-500 text-white rounded-full flex items-center justify-center text-[8px] font-bold">DM</span>
             </div>
           </div>
           <div className="space-y-2 my-2 text-[10px]">
             <div className="p-1.5 rounded bg-slate-800/40">
-              <span className="text-blue-400 font-mono font-bold">@Dani:</span>
+              <span className="text-indigo-400 font-mono font-bold">@Dani:</span>
               <span className="text-slate-300 ml-1">"I have verified staging metrics represent healthy CPU margins."</span>
             </div>
             <div className="p-1.5 rounded bg-slate-800/40">
@@ -154,17 +155,15 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
   const IconComponent = slides[currentSlide].icon;
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-slate-100 flex flex-col justify-between p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-[#1A2260] text-slate-100 flex flex-col justify-between p-6 relative overflow-hidden">
       {/* Background radial highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[110px] pointer-events-none" />
 
       {/* Header Row */}
       <div className="flex items-center justify-between z-10">
         <div className="flex items-center gap-2">
-          {/* Logo element */}
-          <div className="flex flex-col space-y-0.5 p-1.5 bg-[#1E293B] border border-blue-500/25 rounded-lg shadow">
-            <div className="w-5 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-sm" />
-            <div className="w-5 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-sm transform translate-x-1" />
+          <div className="w-8 h-8 bg-[#E8ECFE] border border-[#4F6EF7]/35 rounded-lg flex items-center justify-center shadow">
+            <img src={stackupLogo} alt="" className="w-6.5 h-6.5 object-contain" />
           </div>
           <span className="font-bold tracking-tight text-sm">StackUp</span>
         </div>
@@ -183,7 +182,7 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
         
         {/* Left Side: Text and Slides description */}
         <div className="w-full lg:w-1/2 flex flex-col space-y-4 text-center lg:text-left">
-          <div className="text-xs font-mono font-bold tracking-wider text-blue-400 uppercase bg-blue-500/10 px-2 py-1 rounded inline-self-center lg:inline-self-start max-w-xs self-center lg:self-start">
+          <div className="text-xs font-mono font-bold tracking-wider text-indigo-400 uppercase bg-indigo-500/10 px-2 py-1 rounded inline-self-center lg:inline-self-start max-w-xs self-center lg:self-start">
             Step {currentSlide + 1} of 4
           </div>
 
@@ -226,7 +225,7 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
                   key={idx}
                   onClick={() => setCurrentSlide(idx)}
                   className={`h-2.5 rounded-full transition-all duration-300 ${
-                    currentSlide === idx ? "w-6 bg-blue-500" : "w-2.5 bg-slate-700 hover:bg-slate-600"
+                    currentSlide === idx ? "w-6 bg-indigo-500" : "w-2.5 bg-slate-700 hover:bg-slate-600"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -237,7 +236,7 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
 
         {/* Right Side: High Fidelity visual illustration schematics */}
         <div className="w-full sm:w-[320px] md:w-[360px] h-[240px] flex-shrink-0 z-10 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl opacity-[0.06] blur-xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-2xl opacity-[0.06] blur-xl" />
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -271,7 +270,7 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
         <button
           onClick={nextSlide}
           id="next-step-btn"
-          className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md active:scale-95 cursor-pointer"
+          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md active:scale-95 cursor-pointer"
         >
           {currentSlide === slides.length - 1 ? (
             <>
@@ -289,3 +288,4 @@ export default function WelcomeCarousel({ onFinish, onSkip, userName = "Aly" }: 
     </div>
   );
 }
+
