@@ -47,6 +47,8 @@
   [class~="border-slate-800"],
   [class~="border-slate-850"],
   [class~="border-slate-805/85"],
+  [class~="border-slate-900"],
+  [class~="border-slate-900/60"],
   [class~="border-slate-800/60"],
   [class~="border-slate-800/70"],
   [class~="border-slate-800/80"],
@@ -55,18 +57,30 @@
   }
 
   [class~="bg-slate-950/25"],
+  [class~="bg-slate-950"],
+  [class~="bg-slate-950/40"],
+  [class~="bg-slate-950/50"],
   [class~="bg-slate-900"],
+  [class~="bg-slate-905"],
   [class~="bg-slate-900/30"],
   [class~="bg-slate-900/35"],
   [class~="bg-slate-900/40"],
   [class~="bg-slate-800"],
+  [class~="bg-slate-810"],
+  [class~="bg-slate-850"],
   [class~="bg-slate-800/20"],
+  [class~="bg-slate-800/25"],
+  [class~="bg-slate-800/30"],
   [class~="bg-slate-800/40"],
   [class~="bg-slate-800/50"] {
     background-color: #f4f6ff !important;
   }
 
   [class~="hover:bg-slate-700"]:hover,
+  [class~="hover:bg-slate-700/60"]:hover,
+  [class~="hover:bg-slate-800/25"]:hover,
+  [class~="hover:bg-slate-800/30"]:hover,
+  [class~="hover:bg-slate-800/40"]:hover,
   [class~="hover:bg-slate-800/50"]:hover,
   [class~="hover:bg-slate-800/60"]:hover {
     background-color: #e8ecfe !important;
@@ -91,12 +105,14 @@
   }
 
   [class~="bg-[#1630A8]"] [class~="text-white"],
+  [class~="bg-[#1A2260]"] [class~="text-white"],
   [class~="bg-slate-900"] [class~="text-white"],
   [class~="bg-slate-900/30"] [class~="text-white"],
   [class~="bg-slate-900/40"] [class~="text-white"],
   [class~="bg-slate-800"] [class~="text-white"],
   [class~="bg-slate-800/40"] [class~="text-white"],
   [class~="bg-[#1630A8]"][class~="text-white"],
+  [class~="bg-[#1A2260]"][class~="text-white"],
   [class~="bg-slate-900"][class~="text-white"],
   [class~="bg-slate-800"][class~="text-white"] {
     color: #1a2260 !important;
@@ -111,6 +127,39 @@
   [class~="bg-indigo-600"],
   [class~="bg-indigo-500"] {
     background-color: #4f6ef7 !important;
+  }
+
+  button[class~="bg-[#4F6EF7]"],
+  button[class~="bg-indigo-600"],
+  button[class~="bg-indigo-500"],
+  button[class~="from-indigo-600"],
+  button[class~="from-indigo-500"] {
+    color: #ffffff !important;
+  }
+
+  button[class~="bg-slate-800"],
+  button[class~="bg-slate-900"],
+  button[class~="bg-slate-950"],
+  button[class~="bg-slate-800/40"],
+  button[class~="bg-slate-900/40"] {
+    color: #1a2260 !important;
+    border-color: #c7d2fe !important;
+  }
+
+  button[class~="hover:text-white"]:hover {
+    color: #1a2260 !important;
+  }
+
+  [class~="text-slate-950"] {
+    color: #ffffff !important;
+  }
+
+  [class~="text-rose-300"] {
+    color: #be123c !important;
+  }
+
+  [class~="text-amber-200"] {
+    color: #a16207 !important;
   }
 
   [class~="from-indigo-600"],
