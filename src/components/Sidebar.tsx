@@ -129,7 +129,7 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
       <div className="p-4 border-t border-[#C7D2FE] bg-white/55 flex flex-col space-y-3">
         <div className="flex items-center space-x-3 justify-between">
           <div className="flex items-center space-x-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-600 to-indigo-500 flex items-center justify-center text-xs font-bold text-white shadow-md border border-indigo-500/30">
+            <div className="w-8 h-8 rounded-full bg-[#E8ECFE] flex items-center justify-center text-xs font-extrabold text-[#2B48D4] shadow-sm border border-[#B8C4FF]">
               {user.avatarUrl ? (
                 <img src={user.avatarUrl} alt={user.fullName} className="w-full h-full rounded-full object-cover" />
               ) : (

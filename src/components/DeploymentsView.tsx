@@ -140,10 +140,10 @@ export default function DeploymentsView({
           </div>
 
           {/* Rollback Trigger Area */}
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 flex items-center justify-between gap-3">
+          <div className="p-4 rounded-xl bg-[#F8FAFF] border border-[#C7D2FE] flex items-center justify-between gap-3">
             <div className="space-y-0.5">
-              <span className="text-xs font-bold text-slate-200 block">Emergency Rollback</span>
-              <p className="text-[11px] text-slate-400 leading-normal max-w-xs">
+              <span className="text-xs font-bold text-[#1A2260] block">Emergency Rollback</span>
+              <p className="text-[11px] text-[#5B668F] leading-normal max-w-xs">
                 Instantly redirect proxy ingress routes to a certified checkpoint.
               </p>
             </div>
@@ -154,8 +154,8 @@ export default function DeploymentsView({
               id="deployments-rollback-cta"
               className={`px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-1.5 shadow-md transition-all active:scale-95 cursor-pointer ${
                 currentDeployment.status === "Success"
-                  ? "bg-slate-800 text-slate-500 border border-slate-700/30 cursor-not-allowed opacity-60"
-                  : "bg-[#4F6EF7] text-slate-950 hover:bg-indigo-400"
+                  ? "bg-[#E8ECFE] text-[#5B668F] border border-[#C7D2FE] cursor-not-allowed opacity-80"
+                  : "bg-[#4F6EF7] text-white hover:bg-[#2B48D4]"
               }`}
             >
               <RotateCcw size={12} className={currentDeployment.status !== "Success" ? "animate-pulse" : ""} />
@@ -177,11 +177,11 @@ export default function DeploymentsView({
               { version: "v2.3.9", state: "Stable (Archived)", author: "Dani", enabled: true },
               { version: "v2.3.8", state: "Deprecated", author: "Aly", enabled: false }
             ].map((rh, idx) => (
-              <div key={rh.version} className="flex items-start justify-between p-3 rounded-lg bg-slate-900/20 border border-slate-800/80 hover:border-slate-700 transition-colors">
+              <div key={rh.version} className="flex items-start justify-between p-3 rounded-lg bg-[#F8FAFF] border border-[#C7D2FE] hover:border-[#8EA2FF] transition-colors">
                 <div className="flex items-center space-x-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-0.5" />
                   <div>
-                    <span className="text-xs font-mono font-bold text-white block">{rh.version}</span>
+                    <span className="text-xs font-mono font-bold text-[#1A2260] block">{rh.version}</span>
                     <span className="text-[10px] text-slate-400 font-medium">{rh.state} · Tagged by {rh.author}</span>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function DeploymentsView({
                     Select Rollback
                   </button>
                 ) : (
-                  <span className="text-[9px] text-slate-600 bg-slate-950 font-mono px-2 py-1 rounded inline-flex items-center gap-0.5">
+                  <span className="text-[9px] text-[#5B668F] bg-[#EEF2FF] border border-[#C7D2FE] font-mono px-2 py-1 rounded inline-flex items-center gap-0.5">
                     <Lock size={10} /> Locked
                   </span>
                 )}

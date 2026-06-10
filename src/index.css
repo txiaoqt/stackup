@@ -65,6 +65,9 @@
   [class~="bg-slate-900/30"],
   [class~="bg-slate-900/35"],
   [class~="bg-slate-900/40"],
+  [class~="bg-slate-700"],
+  [class~="bg-slate-700/30"],
+  [class~="bg-slate-700/60"],
   [class~="bg-slate-800"],
   [class~="bg-slate-810"],
   [class~="bg-slate-850"],
@@ -77,6 +80,7 @@
   }
 
   [class~="hover:bg-slate-700"]:hover,
+  [class~="hover:bg-slate-600"]:hover,
   [class~="hover:bg-slate-700/60"]:hover,
   [class~="hover:bg-slate-800/25"]:hover,
   [class~="hover:bg-slate-800/30"]:hover,
@@ -138,11 +142,20 @@
   }
 
   button[class~="bg-slate-800"],
+  button[class~="bg-slate-700"],
   button[class~="bg-slate-900"],
   button[class~="bg-slate-950"],
+  button[class~="bg-slate-700/30"],
+  button[class~="bg-slate-700/60"],
   button[class~="bg-slate-800/40"],
   button[class~="bg-slate-900/40"] {
     color: #1a2260 !important;
+    border-color: #c7d2fe !important;
+  }
+
+  button:disabled {
+    background-color: #e8ecfe !important;
+    color: #5b668f !important;
     border-color: #c7d2fe !important;
   }
 
@@ -180,5 +193,13 @@
   textarea {
     background-color: #ffffff !important;
     color: #1a2260 !important;
+  }
+
+  [class~="rounded-full"][class*="bg-gradient-to-br"],
+  [class~="rounded-full"][class~="bg-slate-700"],
+  [class~="rounded-full"][class~="bg-slate-850"] {
+    background: #e8ecfe !important;
+    color: #2b48d4 !important;
+    border-color: #b8c4ff !important;
   }
 }
