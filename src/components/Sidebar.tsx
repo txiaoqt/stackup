@@ -80,10 +80,10 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
           <img src={stackupLogo} alt="" className="w-7 h-7 object-contain" />
         </button>
         <div className="flex flex-col cursor-pointer" onClick={() => setScreen("DASHBOARD")}>
-          <span className="text-lg font-bold text-white tracking-tight flex items-center gap-0.5">
+          <span className="text-lg font-extrabold text-[#1A2260] tracking-tight flex items-center gap-0.5">
             Stack<span className="text-[#4F6EF7]">Up</span>
           </span>
-          <span className="text-[10px] text-slate-500 font-mono tracking-wider -mt-1 font-semibold uppercase">Control Pane</span>
+          <span className="text-[10px] text-[#51608B] font-mono tracking-wider -mt-1 font-semibold uppercase">Control Pane</span>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
       <nav className="flex-1 px-4 py-4 space-y-5 overflow-y-auto custom-scrollbar">
         {sections.map((sec) => (
           <div key={sec.title} className="space-y-1">
-            <p className="px-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest">{sec.title}</p>
+            <p className="px-3 text-[10px] font-bold text-[#5B668F] uppercase tracking-widest">{sec.title}</p>
             <ul className="space-y-0.5">
               {sec.items.map((item) => {
                 const Icon = item.icon;
@@ -102,12 +102,12 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
                       onClick={() => handleNavClick(item.screen)}
                       className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer group ${
                         active 
-                          ? "bg-slate-800 text-white border-l-2 border-[#4F6EF7] pl-2.5 shadow-sm"
-                          : "text-slate-400 hover:bg-slate-800/50 hover:text-white"
+                          ? "bg-[#E8ECFE] text-[#1A2260] border-l-2 border-[#4F6EF7] pl-2.5 shadow-sm"
+                          : "text-[#46557F] hover:bg-[#EEF2FF] hover:text-[#1A2260]"
                       }`}
                     >
                       <div className="flex items-center space-x-3">
-                        <Icon size={16} className={active ? "text-[#4F6EF7]" : "text-slate-500 group-hover:text-slate-300 transition-colors"} />
+                        <Icon size={16} className={active ? "text-[#4F6EF7]" : "text-[#6E7AA3] group-hover:text-[#4F6EF7] transition-colors"} />
                         <span>{item.label}</span>
                       </div>
                       
@@ -126,7 +126,7 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
       </nav>
 
       {/* User Information & Settings Box */}
-      <div className="p-4 border-t border-slate-800/80 bg-slate-950/25 flex flex-col space-y-3">
+      <div className="p-4 border-t border-[#C7D2FE] bg-white/55 flex flex-col space-y-3">
         <div className="flex items-center space-x-3 justify-between">
           <div className="flex items-center space-x-2.5 min-w-0">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-600 to-indigo-500 flex items-center justify-center text-xs font-bold text-white shadow-md border border-indigo-500/30">
@@ -137,22 +137,22 @@ export default function Sidebar({ currentScreen, setScreen, user, onLogout }: Si
               )}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-semibold text-white truncate leading-tight">{user.fullName}</p>
-              <p className="text-[9px] text-slate-500 font-medium truncate tracking-wide">{user.teamName}</p>
+              <p className="text-xs font-bold text-[#1A2260] truncate leading-tight">{user.fullName}</p>
+              <p className="text-[9px] text-[#5B668F] font-medium truncate tracking-wide">{user.teamName}</p>
             </div>
           </div>
 
           <button 
             onClick={onLogout}
             title="Log Out Service"
-            className="p-1.5 rounded-md text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-all cursor-pointer"
+            className="p-1.5 rounded-md text-[#5B668F] hover:text-rose-500 hover:bg-rose-500/10 transition-all cursor-pointer"
           >
             <LogOut size={14} />
           </button>
         </div>
 
-        <div className="flex items-center justify-between text-[9px] text-slate-600 font-mono">
-          <span>Status: <span className="text-emerald-500 font-bold">● Live</span></span>
+        <div className="flex items-center justify-between text-[9px] text-[#5B668F] font-mono">
+          <span>Status: <span className="text-emerald-600 font-bold">Live</span></span>
           <span>v1.0.0</span>
         </div>
       </div>
